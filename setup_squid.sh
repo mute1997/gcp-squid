@@ -1,5 +1,6 @@
 #!/bin/bash
 
+home=150.246.71.28/32
 eth0=10.146.0.8
 eth1=10.1.0.6
 eth1_base=10.1.0.1
@@ -14,7 +15,7 @@ sudo systemctl enable squid
 sudo echo "1 rt1" | sudo tee -a /etc/iproute2/rt_tables
 
 ETH1_BASE=${eth1_base} ETH1_IP=${eth1} ./mo interfaces > i
-ETH0=${eth0} ETH1=${eht1} ./mo squid.conf > s
+HOME=${home} ETH0=${eth0} ETH1=${eht1} ./mo squid.conf > s
 sudo cp i /etc/network/interfaces
 sudo cp s /etc/squid/squid.conf
 
